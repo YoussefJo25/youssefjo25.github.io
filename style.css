@@ -636,57 +636,64 @@ a {
 }
 
 
+
+
+
 /* =========================================
    📱 إعدادات الموبايل (Mobile Responsiveness)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. تظبيط شريط التنقل وإعطائه مساحة بيضاء مريحة */
+    /* 1. تظبيط اللوجو والروابط عشان يكونوا في النص وواضحين */
     .nav-content {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 15px 0;
     }
+    .logo img {
+        height: 90px !important; /* تكبير اللوجو عشان يملى العين */
+        margin-right: 0 !important;
+        margin-bottom: 15px;
+    }
     .nav-links {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
+        gap: 12px;
+    }
+    .nav-links a {
+        font-size: 14px; /* تصغير الخط شوية عشان يناسب الشاشة */
     }
 
-    /* 2. تظبيط أول قسم (صورتك والكلام) ليكونوا تحت بعض في المنتصف */
+    /* 2. تظبيط أول قسم (الكلام الأول وبعدين الصورة بحجم أصغر) */
     .hero-content {
-        flex-direction: column-reverse; /* بيخلي صورتك فوق والكلام تحتها */
+        display: flex;
+        flex-direction: column; /* الترتيب الطبيعي: كلام ثم صورة */
         text-align: center;
-        gap: 40px;
-        padding-top: 30px;
+        gap: 30px;
+        padding-top: 20px;
+    }
+    .hero-image img {
+        max-width: 220px !important; /* تصغير الصورة الشخصية عشان متقفلش الشاشة */
+        margin: 0 auto;
     }
     .hero-title {
-        font-size: 2.2rem; /* الحفاظ على خطوط نظيفة ومقروءة */
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
     }
     .cta-group {
         justify-content: center;
     }
 
-    /* 3. تحويل كل الشبكات (Grid) لعمود واحد لراحة العين */
-    .skills-grid, 
-    .project-grid, 
-    .insights-grid, 
-    .books-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    /* 4. تظبيط الفوتر ليكون عمود واحد مرتب */
+    /* 3. تظبيط الفوتر والجريد لعمود واحد */
     .footer-grid {
         grid-template-columns: 1fr !important;
         text-align: center;
-        gap: 40px !important;
+        gap: 30px !important;
     }
     .contact-item {
         justify-content: center;
-    }
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
