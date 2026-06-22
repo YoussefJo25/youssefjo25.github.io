@@ -225,27 +225,55 @@
         </section>
     </main>
 
-    <footer id="contact" class="footer">
-        <style>
-          .footer-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 0; }
-          .footer-logo-main { height: 120px; margin-bottom: 15px; mix-blend-mode: screen; }
-          .footer-text { font-size: 1.5rem; margin-bottom: 25px; }
-          .social-icons-footer { display: flex; justify-content: center; gap: 30px; font-size: 24px; margin-top: 15px; }
-        </style>
-        <div class="footer-wrapper">
-          <img src="logo.png" alt="Youssef Jo Logo" class="footer-logo-main">
-          <h2 class="footer-text">Let's build something<br>elegant together.</h2>
-          <div class="social-icons-footer">
-            <a href="https://github.com/YoussefJo25" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/youssef-jo-294812336" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://wa.me/qr/HJWHHCY2TYUQC1" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://t.me/YOUSSEFJO2025" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://www.facebook.com/share/1EKqjhGXdd/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/youssef_jo_alahlawy" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:z01154790192z@gmail.com"><i class="fas fa-envelope"></i></a>
-          </div>
+<footer id="contact" class="footer" style="padding: 60px 0; border-top: 1px solid #333; margin-top: 50px;">
+    <style>
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; align-items: start; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-logo-small { height: 60px; margin-bottom: 15px; mix-blend-mode: screen; }
+        .footer-text { font-size: 1.8rem; margin-bottom: 20px; }
+        .contact-item { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .footer-links h4 { margin-bottom: 15px; color: #D4AF37; }
+        .footer-links a { display: block; margin-bottom: 8px; color: #ccc; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; font-size: 0.9rem; color: #666; }
+    </style>
+    
+    <div class="footer-grid">
+        <!-- Column 1: Logo & Contact -->
+        <div>
+            <img src="logo.png" alt="Youssef Jo Logo" class="footer-logo-small">
+            <h2 class="footer-text">Let's build something<br>elegant together.</h2>
+            <p class="contact-item"><i class="fas fa-envelope"></i> z01154790192z@gmail.com</p>
+            <p class="contact-item"><i class="fas fa-location-dot"></i> Maghagha, Minya</p>
         </div>
-    </footer>
+
+        <!-- Column 2: Professional -->
+        <div class="footer-links">
+            <h4>PROFESSIONAL</h4>
+            <a href="https://github.com/YoussefJo25" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/youssef-jo-294812336" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+
+        <!-- Column 3: Messaging -->
+        <div class="footer-links">
+            <h4>MESSAGING</h4>
+            <a href="https://wa.me/qr/HJWHHCY2TYUQC1" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/YOUSSEFJO2025" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
+        </div>
+
+        <!-- Column 4: Social Media -->
+        <div class="footer-links">
+            <h4>SOCIAL MEDIA</h4>
+            <a href="https://www.facebook.com/share/1EKqjhGXdd/" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/youssef_jo_alahlawy" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@youssefjo_18" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://www.snapchat.com/add/youssefjo_25" target="_blank"><i class="fa-brands fa-snapchat-ghost"></i> Snapchat</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 Youssef Abdellatif Kamal Mohamed. All rights reserved.
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
