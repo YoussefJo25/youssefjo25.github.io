@@ -349,3 +349,64 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+/* =========================================
+   📱 إعدادات الموبايل (Mobile Responsiveness)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    /* 1. تظبيط شريط التنقل وإعطائه مساحة بيضاء مريحة */
+    .nav-content {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    /* 2. تظبيط أول قسم (صورتك والكلام) ليكونوا تحت بعض في المنتصف */
+    .hero-content {
+        flex-direction: column-reverse; /* بيخلي صورتك فوق والكلام تحتها */
+        text-align: center;
+        gap: 40px;
+        padding-top: 30px;
+    }
+    .hero-title {
+        font-size: 2.2rem; /* الحفاظ على خطوط نظيفة ومقروءة */
+    }
+    .cta-group {
+        justify-content: center;
+    }
+
+    /* 3. تحويل كل الشبكات (Grid) لعمود واحد لراحة العين */
+    .skills-grid, 
+    .project-grid, 
+    .insights-grid, 
+    .books-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* 4. تظبيط الفوتر ليكون عمود واحد مرتب */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 40px !important;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
