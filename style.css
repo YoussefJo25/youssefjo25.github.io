@@ -643,38 +643,40 @@ a {
    📱 إعدادات الموبايل (Mobile Responsiveness)
    ========================================= */
 @media screen and (max-width: 768px) {
-    /* 1. تظبيط اللوجو والروابط عشان يكونوا في النص وواضحين */
+    /* تظبيط اللوجو والروابط */
     .nav-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 15px 0;
+        padding: 10px 0;
     }
     .logo img {
-        height: 90px !important; /* تكبير اللوجو عشان يملى العين */
+        height: 70px !important; 
         margin-right: 0 !important;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
     .nav-links {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 10px;
     }
     .nav-links a {
-        font-size: 14px; /* تصغير الخط شوية عشان يناسب الشاشة */
+        font-size: 13px; 
     }
 
-    /* 2. تظبيط أول قسم (الكلام الأول وبعدين الصورة بحجم أصغر) */
+    /* إظهار الاسم وتظبيط المسافات */
+    .hero {
+        padding-top: 140px; /* المسافة دي هتنزل الكلام تحت عشان الـ Navbar مياكلوش */
+    }
     .hero-content {
         display: flex;
-        flex-direction: column; /* الترتيب الطبيعي: كلام ثم صورة */
+        flex-direction: column; 
         text-align: center;
         gap: 30px;
-        padding-top: 20px;
     }
     .hero-image img {
-        max-width: 220px !important; /* تصغير الصورة الشخصية عشان متقفلش الشاشة */
+        max-width: 220px !important; 
         margin: 0 auto;
     }
     .hero-title {
@@ -683,11 +685,17 @@ a {
     .hero-subtitle {
         font-size: 1rem;
     }
+    
+    /* تظبيط الزراير عشان يبقوا شيك */
     .cta-group {
+        display: flex;
+        flex-direction: row; /* نخليهم جنب بعض */
         justify-content: center;
+        gap: 15px; /* المسافة السحرية بين الزرارين */
+        flex-wrap: wrap;
     }
 
-    /* 3. تظبيط الفوتر والجريد لعمود واحد */
+    /* تظبيط الفوتر */
     .footer-grid {
         grid-template-columns: 1fr !important;
         text-align: center;
