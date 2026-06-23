@@ -3,7 +3,6 @@ lucide.createIcons();
 
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
-
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('light-mode');
-        
+
         if (body.classList.contains('light-mode')) {
             themeIcon.classList.remove('fa-sun');
             themeIcon.classList.add('fa-moon');
@@ -48,19 +47,65 @@ document.addEventListener('DOMContentLoaded', () => {
             themeIcon.classList.add('fa-sun');
         }
     });
+
+    // Mobile Hamburger Menu Logic
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navToggleIcon = navToggle.querySelector('i');
+
+    function closeMenu() {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggleIcon.classList.remove('fa-xmark');
+        navToggleIcon.classList.add('fa-bars');
+    }
+
+    function openMenu() {
+        navLinks.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggleIcon.classList.remove('fa-bars');
+        navToggleIcon.classList.add('fa-xmark');
+    }
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.contains('open');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Close the menu after tapping a nav link (but not the theme toggle button)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close the menu if the viewport grows back to desktop size
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
+
+    // Close the menu when tapping outside of it
+    document.addEventListener('click', (e) => {
+        const isClickInsideNav = navLinks.contains(e.target) || navToggle.contains(e.target);
+        if (!isClickInsideNav && navLinks.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+
     // Book Filtering Logic
     const filterBtns = document.querySelectorAll('.filter-btn');
     const bookCards = document.querySelectorAll('.book-card');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
             btn.classList.add('active');
 
             const filterValue = btn.getAttribute('data-filter');
-
             bookCards.forEach(card => {
                 if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                     card.classList.remove('hide');
